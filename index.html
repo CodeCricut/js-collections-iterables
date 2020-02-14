@@ -15,9 +15,11 @@
         <script class="mocha-init">
             mocha.setup("bdd");
             mocha.checkLeaks();
+            const assert = chai.assert;
         </script>
         <!-- custom scripts -->
-        <script src="test.array.js"></script>
+        <script src="./test/test.arrays.js"></script>
+        <script src="arrays.js"></script>
         <!-- end -->
         <script class="mocha-exec">
             mocha.run();
