@@ -36,17 +36,17 @@ let arr = ["Apple", "Orange", "Pear"];
 
 // you can use a for loop if you need the index
 for (let i = 0; i < arr.length; i++) {
-    alert(arr[i]);
+    console.log(arr[i]);
 }
 
 // use a for...or loop if the index in unneccessary
 for (let fruit of fruits) {
-    alert(fruit);
+    console.log(fruit);
 }
 
 // you can technically use a for...in loop as arrays are objects, but it is slower and can have unexpected behavior
 for (let key in arr) {
-    alert(arr[key]); // Apple, Orange, Pear
+    console.log(arr[key]); // Apple, Orange, Pear
 }
 
 // Multidimensional arrays
@@ -60,3 +60,104 @@ let one = matrix[0][0];
 let three = matrix[0][2];
 let five = matrix[1][1];
 let nine = matrix[2][2];
+
+// Copy by reference
+
+// since arrays are objects, they will only be copied by reference
+let fruit = ["apples", "bannanas"];
+let shoppingCart = fruit; // simply copies the reference
+shoppingCart.push("pears");
+console.log(fruit.length); // 3
+
+// Array.splice()
+
+// splice can remove elements from an array
+function removeElementsFromIndex(array, i, n) {
+    let removed = array.splice(i, n); // from index i remove n elements;
+    return array;
+}
+
+// splice can remove elements then replace them
+function removeAndReplaceElements(array, i, n, ...elements) {
+    array.splice(i, n, ...elements);
+    return array;
+}
+
+// splice can remove elements from an array and return them
+function removeAndReturnRemoved(array, i, n) {
+    return array.splice(i, n);
+}
+
+// Array.slice()
+
+// slice can return a new array between two indexes
+function sliceBetween(array, start, end) {
+    return array.slice(start, end);
+}
+
+// slice can return the rest of the array from a position
+function sliceFrom(array, from) {
+    return array.slice(from);
+}
+
+// slice can be easily used to copy an array
+function copyWithSlice(array) {
+    return array.slice();
+}
+
+// Array.concat()
+
+// concat creates a new array that includes values from another array and appends additional items
+function concatArray(array, ...items) {
+    return array.concat(items);
+}
+
+// array.forEach()
+
+// forEach applies a function to each element
+function applyFuncToEachElement(array, func) {
+    array.forEach(func);
+}
+
+// Searching
+
+// indexOf returns the first occurance of item in array, starting the search at from
+function findIndexOf(array, item, from = 0) {
+    return array.indexOf(array, item, from);
+}
+
+// same, but search from right to left
+function findLastIndexOf(array, item, from = 0) {
+    return array.lastIndexOf(array, item, from);
+}
+
+// find can be used to find the first element that fits a specific condition
+function findByCondition(array, func) {
+    // array.find((item, index, arr) => { }
+    const firstMatch = array.find(func);
+    return firstMatch;
+}
+
+// filter returns all elements that match a condition
+function findAllByCondition(array, func) {
+    // array.find((item, index, arr) => { }
+    const allMatches = array.filter(func);
+    return allMatches;
+}
+
+// Transforming
+
+// map performs an operation on each element and returns an array of results
+function transformArray(array, func) {
+    return array.map(func);
+}
+
+// you can split a string into an elements based on a delimiter
+function splitByDelimiter(string, delim) {
+    return string.split(delim);
+}
+
+// you can join an array's elements into a string with a delimiter inbetween each element
+function glueWithDelimiter(array, delim) {
+    return array.join(delim);
+}
