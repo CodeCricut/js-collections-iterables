@@ -48,3 +48,15 @@ for (let fruit of fruits) {
 for (let key in arr) {
     alert(arr[key]); // Apple, Orange, Pear
 }
+
+// Multidimensional arrays
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+let one = matrix[0][0];
+let three = matrix[0][2];
+let five = matrix[1][1];
+let nine = matrix[2][2];
