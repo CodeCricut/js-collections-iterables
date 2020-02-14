@@ -30,3 +30,21 @@ function shiftElement(array) {
 function popElement(array) {
     return array.pop(); // returns last element
 }
+
+// Loops
+let arr = ["Apple", "Orange", "Pear"];
+
+// you can use a for loop if you need the index
+for (let i = 0; i < arr.length; i++) {
+    alert(arr[i]);
+}
+
+// use a for...or loop if the index in unneccessary
+for (let fruit of fruits) {
+    alert(fruit);
+}
+
+// you can technically use a for...in loop as arrays are objects, but it is slower and can have unexpected behavior
+for (let key in arr) {
+    alert(arr[key]); // Apple, Orange, Pear
+}
