@@ -40,7 +40,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 // use a for...or loop if the index in unneccessary
-for (let fruit of fruits) {
+for (let fruit of arr) {
     console.log(fruit);
 }
 
